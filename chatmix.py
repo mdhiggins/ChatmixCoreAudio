@@ -148,17 +148,21 @@ def main():
             if session.Process:
                 volume = session._ctl.QueryInterface(ISimpleAudioVolume)
                 app_name = session.Process.name()
+                app_id = session.ProcessId
 
                 # Check if the application is in the voice list
                 if app_name in voice_apps:
                     # Apply voice volume level
                     log.debug(f"Setting volume for {app_name} to {voice_level}")
+                    log.debug(f"Setting volume for {app_name} {app_id} to {voice_level}")
+
                     volume.SetMasterVolume(voice_level / 100, None)
                 elif app_name in exclude_apps:
                     log.debug(f"Ignoring volume for {app_name}")
+                    log.debug(f"Ignoring volume for {app_name} {app_id}")
                 else:
                     # Apply system volume level
-                    log.debug(f"Setting volume for {app_name} to {system_level}")
+                    log.debug(f"Setting volume for {app_name} {app_id} to {system_level}")
                     volume.SetMasterVolume(system_level / 100, None)
 
     # Thread function for USB reading
