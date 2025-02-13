@@ -1,0 +1,8 @@
+{
+    "vendor_id": "0x1038",
+    "product_id": "0x2202",
+    "interface_number": 5,
+    "endpoint_address": "0x86",
+    "voice_apps": ["Discord.exe"],
+    "exclude_apps": ["explorer.exe"]
+}
