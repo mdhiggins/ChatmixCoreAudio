@@ -93,7 +93,6 @@ def main():
     endpoint_address = config.get("endpoint_address", 0x86)
     voice_apps = set(config.get("voice_apps", []))
     exclude_apps = set(config.get("exclude_apps", []))
-    print(exclude_apps)
 
     # Find the USB device
     dev = usb.core.find(idVendor=vendor_id, idProduct=product_id)
