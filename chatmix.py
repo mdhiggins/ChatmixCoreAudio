@@ -140,9 +140,9 @@ def main():
     }
 
     # Method for setting the levels
-    def set_volume_levels(voice_level, system_level, sessions=None):
+    def set_volume_levels(voice_level, system_level):
         # Get all active audio sessions
-        sessions = sessions if sessions else AudioUtilities.GetAllSessions()
+        sessions = AudioUtilities.GetAllSessions()
 
         # Iterate through each session
         for session in sessions:
@@ -222,7 +222,7 @@ def main():
 
                     # Apply the volume levels (voice_level, system_level)
                     time.sleep(1)
-                    set_volume_levels(volume_cache["voice_level"], volume_cache["system_level"], sessions=current_sessions)
+                    set_volume_levels(volume_cache["voice_level"], volume_cache["system_level"])
 
                 # Update the known sessions
                 known_sessions = current_sessions
