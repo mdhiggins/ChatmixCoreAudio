@@ -7,7 +7,7 @@ import os
 import sys
 import threading
 import time
-import json  # Import json module for configuration
+import json
 
 from psutil import NoSuchProcess
 from pycaw.pycaw import AudioUtilities, ISimpleAudioVolume
